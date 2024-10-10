@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "target": "ES6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@schemas": ["schemas"],
+      "@interfaces": ["interfaces"],
+      "@middleware/*": ["middleware/*"],
+      "@utils/*": ["utils/*"],
+      "@resolvers/*": ["resolvers/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
