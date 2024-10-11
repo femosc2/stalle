@@ -1,13 +1,13 @@
-import admin from "@middleware/firebase";
-import { Pixel } from "@interfaces";
+import admin from '@middleware/firebase';
+import { Pixel } from '@interfaces';
 
 const gridSize = 50;
 
 const db = admin.database();
 
 function getRandomColor(): string {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
+  const letters = '0123456789ABCDEF';
+  let color = '#';
   for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
@@ -19,7 +19,7 @@ function getRandomUserID(): string {
 }
 
 async function seedDatabase() {
-  const pixelsRef = db.ref("pixels");
+  const pixelsRef = db.ref('pixels');
 
   console.log("Cleaning up the existing 'pixels' node...");
   await pixelsRef.remove();
@@ -46,15 +46,15 @@ async function seedDatabase() {
     }
   }
 
-  console.log("Seeding completed!");
+  console.log('Seeding completed!');
 }
 
 seedDatabase()
   .then(() => {
-    console.log("Seeding process finished.");
+    console.log('Seeding process finished.');
     process.exit(0);
   })
-  .catch((error) => {
-    console.error("Error during seeding process:", error);
+  .catch(error => {
+    console.error('Error during seeding process:', error);
     process.exit(1);
   });

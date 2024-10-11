@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 interface PixelState {
   color: string;
@@ -7,13 +7,13 @@ interface PixelState {
 }
 
 const initialState: PixelState = {
-  color: "#FFFFFF",
-  user: "anonymous",
+  color: '#FFFFFF',
+  user: 'anonymous',
   position: { x: 0, y: 0 },
 };
 
 const pixelSlice = createSlice({
-  name: "pixel",
+  name: 'pixel',
   initialState,
   reducers: {
     setPixel: (state, action) => {

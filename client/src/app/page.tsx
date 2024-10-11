@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "./store";
-import { setPixel } from "./slices/pixel/index";
-import { StyledButton } from "./page.styles";
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from './store';
+import { setPixel } from './slices/pixel/index';
+import { StyledButton } from './page.styles';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const HomePage = () => {
 
   const handleChangePixel = () => {
     dispatch(
-      setPixel({ color: "#FF5733", user: "user123", position: { x: 1, y: 1 } })
+      setPixel({ color: '#FF5733', user: 'user123', position: { x: 1, y: 1 } })
     );
   };
 
