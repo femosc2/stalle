@@ -1,8 +1,19 @@
-npm run format
+SCOPE=$(node scripts/extractScope.js)
 
 npx lint-staged
 
-npx vitest run --environment jsdom --passWithNoTests
-
-npx --no-install commitlint --edit "$1"
-
+if [[ "$SCOPE" == "client" ]]; then
+  echo "Running linting and tests for the client..."
+  cd client
+  npx vitest run --passWithNoTests
+elif [[ "$SCOPE" == "server" ]]; then
+  echo "Running linting and tests for the server..."
+  cd server
+  npx vitest run --passWithNoTests
+else
+  echo "Running global linting and tests..."
+  cd client
+  npx vitest run --passWithNoTests
+  cd ../server
+  npx vitest run --passWithNoTests
+fi
