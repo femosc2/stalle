@@ -5,8 +5,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "dev": "npm run dev --workspaces",
+    "install": "npm install --workspaces",
+    "test:all": "npm run test --workspaces"
   },
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
