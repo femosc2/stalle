@@ -13,3 +13,12 @@ all commits must be structured like the following ```<task>(<project>): <descrip
 task = chore, feat, fix, ci, tes, documentation
 
 project = client or server
+
+### Workspaces
+
+This repo uses workspaces! This means that you can run all commands directly from the root of the repo like this
+
+```npm install --workspace client```
+```npm run dev --workspace server```
+
+etc
